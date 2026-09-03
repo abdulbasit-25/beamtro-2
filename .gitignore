@@ -17,7 +17,7 @@ dist-ssr
 .lovable/
 .env
 *.local
-AGENT.md
+AGENTS.md
 # Wrangler / Cloudflare
 .wrangler/
 .dev.vars
