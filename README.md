@@ -1,696 +1,404 @@
-# Beamtro: Your Instant Room
+# Beamtro — Real-Time Communication Platform
 
-Rebuild & Upgrade Beamtro — Real-Time Communication Platform
+> **One room. Voice, video, screen, and everything said.**
 
-Rework the existing project into a polished, modern communication platform called Beamtro.
+Beamtro is a lightweight, modern real-time communication platform designed for quick and frictionless collaboration.
 
-Do not rename the product.
+Create a temporary room, share a short code or link, and connect with **2–6 people** through text chat, voice, video, and screen sharing — without creating an account or installing anything.
 
-The goal is to make Beamtro feel like a lightweight, beautifully designed alternative to complicated meeting platforms — focused on temporary rooms, conversation, voice, video, and screen sharing.
+The goal of Beamtro is simple:
 
-The core idea:
+**Open → Create/Join → Connect → Talk**
 
-One room. Voice, video, screen, and everything said.
+---
 
-Beamtro should be fast, minimal, modern, and effortless to use.
+## ✨ Features
 
-1. Product Identity
+### 🚀 Temporary Rooms
 
-Name
+- Create rooms instantly
+- Generate short room codes
+- Share rooms using a unique URL
+- No account or registration required
+- Designed for temporary conversations and collaboration
 
-Beamtro
+### 💬 Real-Time Chat
 
-Keep this name consistently throughout:
+- Send messages inside the room
+- Display names for participants
+- Message timestamps
+- Own-message identification
+- Scroll through previous messages
+- Chat remains available throughout the session
 
-Browser title
+### 🎙️ Voice Communication
 
-Navbar
+- Real-time audio communication
+- Microphone controls
+- Microphone status indicators
+- Speaking indicators
+- Connection status feedback
 
-Logo/wordmark
+### 📹 Video Calls
 
-Metadata
+- Real-time video communication
+- Participant video tiles
+- Camera controls
+- Camera status indicators
+- Responsive video layout
 
-Footer
+### 🖥️ Screen Sharing
 
-About page
+Screen sharing is a core feature of Beamtro.
 
-Help page
+Use it for:
 
-Room interface
+- Presentations
+- Technical support
+- Collaboration
+- Demonstrations
+- Remote assistance
 
-Empty states
+When screen sharing is active, the shared screen becomes the primary visual while participants remain accessible.
 
-Loading states
+### 👥 Participant Management
 
-Error states
+The participant panel displays:
 
-Do not introduce "Wire" or any alternative product name.
+- Display name
+- Microphone status
+- Camera status
+- Speaking indicator
+- Current-user identification
 
-Beamtro should feel like an actual standalone product, not a template or developer demo.
+Beamtro is designed to support **2–6 participants** per room.
 
-2. Design Direction
+### 🔗 Easy Invitations
 
-Create a distinctive visual identity for Beamtro.
+Users can join using either:
 
-The design should be:
+- Room code
+- Full room URL
 
-Minimal
+Example:
 
-Premium
-
-Modern
-
-Technical
-
-Calm
-
-Dark/light balanced
-
-Spacious
-
-Highly readable
-
-Responsive
-
-Professional without feeling corporate
-
-Avoid:
-
-Generic SaaS dashboard styling
-
-Excessive gradients
-
-Stock photography
-
-Huge decorative illustrations
-
-Excessive rounded cards
-
-Cluttered interfaces
-
-Overly colorful UI
-
-Generic Zoom/Discord clones
-
-Use subtle motion, elegant transitions, restrained borders, good typography, and strong spacing.
-
-The interface should feel like a communication instrument, not a traditional SaaS application.
-
-3. Homepage
-
-Create a strong landing page.
-
-Navbar
-
-Left:
-
-Beamtro
-
-Navigation:
-
-About
-
-Help
-
-Archer
-
-Keep the navigation extremely clean.
-
-Include a subtle indicator such as:
-
-No account required
-
-or:
-
-Patch in · no account
-
-This should reinforce the temporary/no-registration nature of the product.
-
-4. Hero Section
-
-Use this headline:
-
-One room. Voice, video, screen, and everything said.
-
-Supporting copy:
-
-Beamtro opens a line between two to six people. Chat runs the whole time; audio, camera and screen ride on top of it, peer to peer.
-
-Make this the visual focus of the homepage.
-
-Add a subtle visual representation of people connecting into one room.
-
-It can be an abstract communication-line visualization, signal animation, connected nodes, or another original visual treatment.
-
-Do not use stock images.
-
-5. Room Entry
-
-Create the main room-entry experience directly beneath the hero.
-
-Show:
-
-idle — no room connected
-
-Then:
-
-Display name
-
-Input:
-
-Display name
-
-Helper text:
-
-Temporary, and only used inside the room.
-
-Primary CTA:
-
-Create a room
-
-Then:
-
-or
-
-Input:
-
-Room code or link
-
-CTA:
-
-Join room
-
-The entire interaction should feel extremely simple.
-
-The user should not need to understand technical concepts.
-
-6. Create Room Flow
-
-When the user clicks Create a room:
-
-Validate the display name.
-
-Create a unique temporary room.
-
-Generate a short room code.
-
-Generate a shareable room URL.
-
-Move the user directly into the room.
-
-Show the room code and invite/share option.
-
-Do not require registration.
-
-Make the transition smooth and immediate.
-
-7. Join Room Flow
-
-Users should be able to join using:
-
-Room code
-
-Full room URL
-
-Support URLs such as:
-
+```text
 /room/ABC123
+```
 
-If a valid room link is opened directly, take the user to the join experience.
+Users can also copy and share their invitation link directly from the room.
 
-Ask for their temporary display name if necessary.
+---
 
-Do not force account creation.
+## 🎨 Design Philosophy
 
-8. Communication Room
+Beamtro is intentionally designed to avoid the complexity of traditional meeting platforms.
 
-The actual room should be the heart of Beamtro.
+The interface focuses on being:
 
-Support:
+- Minimal
+- Premium
+- Modern
+- Technical
+- Calm
+- Spacious
+- Highly readable
+- Responsive
+- Professional without feeling overly corporate
 
-Text chat
+The product avoids unnecessary dashboards, excessive cards, complicated onboarding, and overwhelming settings.
 
-Voice
+> **The product's strongest feature is its simplicity.**
 
-Video
+---
 
-Screen sharing
+## 🧩 Core Experience
 
-Participants
+The entire product is centered around a single communication room.
 
-Room information
+```text
+                ┌──────────────────┐
+                │     BEAMTRO      │
+                └────────┬─────────┘
+                         │
+              Create / Join Room
+                         │
+                         ▼
+                ┌──────────────────┐
+                │   Communication  │
+                │      Room        │
+                └────────┬─────────┘
+                         │
+        ┌────────────────┼────────────────┐
+        │                │                │
+        ▼                ▼                ▼
+      Chat             Voice            Video
+                         │
+                         ▼
+                  Screen Sharing
+```
 
-Invite/share link
+Everything happens inside one unified room rather than forcing users to navigate between separate pages.
 
-Leave room
+---
 
-Everything should exist inside one unified room.
+## 🔄 Connection States
 
-Do not make users navigate through separate pages to use these features.
+Beamtro provides clear feedback for different connection conditions:
 
-9. Room Layout
+| State          | Description                          |
+| -------------- | ------------------------------------ |
+| `Idle`         | No room is connected                 |
+| `Connecting`   | Establishing the connection          |
+| `Connected`    | Room is active                       |
+| `Reconnecting` | Attempting to restore the connection |
+| `Disconnected` | Connection has been lost             |
 
-Design a professional real-time communication interface.
+These states are designed to communicate what's happening without overwhelming the user.
 
-Main area
+---
 
-Display:
+## 📱 Responsive Design
 
-Video participants
+Beamtro is designed for:
 
-Audio-only participants
+- 🖥️ Desktop
+- 💻 Laptop
+- 📱 Mobile
+- 📲 Tablet
 
-Screen share
+The mobile experience is intentionally reorganized rather than simply shrinking the desktop interface.
 
-Speaking indicators
+Room controls, video, chat, participants, and screen sharing adapt to smaller screens.
 
-Connection status
+---
 
-When screen sharing is active, prioritize the shared screen.
+## 🔐 Privacy & Simplicity
 
-Keep participant thumbnails visible without taking unnecessary space.
+Beamtro follows a temporary-room approach.
 
-10. Bottom Control Bar
+- No registration required
+- No account wall
+- No complicated onboarding
+- Display names are temporary
+- No installation required
+- Quick room creation and joining
 
-Create a clean floating or fixed control bar.
+The project is designed around the idea of getting people connected with as little friction as possible.
 
-Controls:
+---
 
-Microphone
+## 🛠️ Technical Requirements
 
-Camera
+The project is intended to preserve and build upon the existing communication functionality rather than unnecessarily replacing working systems.
 
-Screen share
+Before modifying the application, the existing architecture should be inspected, including:
 
-Chat
+- Room functionality
+- Chat functionality
+- WebRTC functionality
+- Authentication/session logic
+- API logic
 
-Participants
+Existing working functionality should be preserved and improved where possible.
 
-More options
+---
 
-Leave
+## 📂 Project Structure
 
-Each control needs clear:
+A typical project structure can be organized as:
 
-Active state
+```text
+beamtro/
+│
+├── public/
+│
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── hooks/
+│   ├── services/
+│   ├── utils/
+│   ├── styles/
+│   └── ...
+│
+├── package.json
+├── README.md
+└── ...
+```
 
-Disabled state
+> The exact structure may vary depending on the existing implementation.
 
-Hover state
+---
 
-Loading state
+## 🚀 Getting Started
 
-Error state
+### Prerequisites
 
-The leave button should be visually distinct enough to prevent accidental confusion.
+Make sure you have installed:
 
-11. Chat
+- [Node.js](https://nodejs.org/)
+- npm
+- Git
 
-Chat should remain available throughout the room.
+### Clone the Repository
 
-Users can:
-
-Send messages
-
-See display names
-
-See timestamps
-
-Identify their own messages
-
-Scroll through previous messages
-
-Make the chat feel integrated into the room rather than like a separate messaging application.
-
-Use subtle message styling.
-
-Avoid excessive chat bubbles and unnecessary decoration.
-
-12. Participants
-
-Create a participant panel showing everyone currently inside the room.
-
-For each participant show:
-
-Display name
-
-Microphone status
-
-Camera status
-
-Speaking indicator
-
-The current user should be clearly identifiable.
-
-Support 2–6 people.
-
-13. Screen Sharing
-
-Screen sharing must be treated as a primary feature.
-
-When someone shares their screen:
-
-Make the shared screen the main visual
-
-Keep participants accessible
-
-Show who is sharing
-
-Provide a clear stop-sharing control
-
-Make this suitable for:
-
-Presentations
-
-Technical support
-
-Collaboration
-
-Demonstrations
-
-Remote assistance
-
-14. Room Information
-
-Display the current room code.
-
-Provide:
-
-Copy invite link
-
-and optionally:
-
-Copy room code
-
-When copied, show a small confirmation such as:
-
-Link copied
-
-Do not use intrusive notifications.
-
-15. Connection States
-
-Create polished states for:
-
-No room
-
-idle — no room connected
-
-Connecting
-
-connecting — establishing line
-
-Connected
-
-connected — room active
-
-Reconnecting
-
-reconnecting — trying to restore connection
-
-Disconnected
-
-offline — connection lost
-
-These states should feel like part of Beamtro's identity.
-
-16. About Page
-
-Create a dedicated About page.
-
-Heading:
-
-A cleaner way to connect in a room.
-
-Copy:
-
-Beamtro is a lightweight browser-based experience for creating quick rooms where people can talk, chat, share their screen, and jump into a call without creating an account or installing anything.
-
-Create three feature sections.
-
-Fast to start
-
-Open Beamtro, create a room, and share a short code or link in seconds.
-
-Everything in one place
-
-Text chat, voice, video, and screen sharing all live in the same room.
-
-Simple and private
-
-No registration, no heavy setup, and a focused experience designed for quick collaboration.
-
-17. Built by Abdul Basit
-
-Add a small creator section.
-
-Built by Abdul Basit
-
-Copy:
-
-Beamtro was created by Abdul Basit, also known as Archer, as a practical and modern way to bring people into a shared space for conversations, support, and presentation-style sessions.
-
-Add:
-
-Visit the portfolio
-
-Link:
-
-https://abdulbasit-archer.vercel.app/
-
-Keep this section understated.
-
-18. Help Page
-
-Create a simple help guide.
-
-Sections:
-
-Creating a room
-
-How to create and share a room.
-
-Joining a room
-
-How to join using a code or link.
-
-Camera and microphone
-
-Explain browser permissions.
-
-Screen sharing
-
-Explain how screen sharing works.
-
-Chat
-
-Explain that chat remains available during the room.
-
-Privacy
-
-Explain that no account is required and display names are temporary.
-
-Troubleshooting
-
-Cover:
-
-Camera unavailable
-
-Microphone unavailable
-
-Screen sharing unavailable
-
-Unable to join
-
-Connection problems
-
-Keep the page short and easy to scan.
-
-19. Footer
-
-Use:
-
-Beamtro
-
-One room. Voice, video, screen, and everything said.
-
-Links:
-
-About
-
-Help
-
-Archer
-
-Creator link:
-
-Archer
-
-→ https://abdulbasit-archer.vercel.app/
-
-At the bottom:
-
-Powered by Archer
-
-20. Technical Requirements
-
-Do not break the existing working functionality.
-
-Before changing anything:
-
-Inspect the existing project.
-
-Understand the current architecture.
-
-Identify the existing room, chat, WebRTC, authentication/session, and API logic.
-
-Preserve working functionality.
-
-Improve the UI around the existing functionality where possible.
-
-Do not replace working backend logic unnecessarily.
-
-The application should remain functional, not just visually redesigned.
-
-If a feature already exists, improve its implementation rather than creating a duplicate system.
-
-21. Responsive Design
-
-Beamtro must work beautifully on:
-
-Desktop
-
-Laptop
-
-Tablet
-
-Mobile
-
-Desktop should provide the full room experience.
-
-Mobile should intelligently reorganize:
-
-Video
-
-Chat
-
-Participants
-
-Controls
-
-Do not simply shrink the desktop layout.
-
-Design an intentional mobile experience.
-
-22. Micro-interactions
-
-Use subtle animations for:
-
-Joining a room
-
-Creating a room
-
-Connecting
-
-Participant appearing
-
-Participant leaving
-
-Speaking
-
-Chat messages
-
-Copying invite links
-
-Opening panels
-
-Screen sharing
-
-Connection status
-
-Animations should be fast and understated.
-
-The product should feel alive without becoming distracting.
-
-23. Important Product Principle
-
-Beamtro should always feel like:
-
-Open → Create/Join → Connect → Talk
-
-There should be almost no friction.
-
-No unnecessary onboarding.
-
-No account wall.
-
-No complicated dashboard.
-
-No unnecessary settings.
-
-No overwhelming UI.
-
-The product's strongest feature is its simplicity.
-
-24. Final Quality Bar
-
-Do not stop at making the page technically functional.
-
-Make the result feel like a real product ready to show publicly.
-
-Pay particular attention to:
-
-Typography
-
-Spacing
-
-Hierarchy
-
-Responsive behavior
-
-Empty states
-
-Loading states
-
-Error states
-
-Button interactions
-
-Accessibility
-
-Keyboard navigation
-
-Mobile controls
-
-Visual consistency
-
-Performance
-
-The final result should make someone immediately understand:
-
-Beamtro is a simple place to create a room and connect with people — without accounts, downloads, or unnecessary complexity.
-
-Keep the branding Beamtro and the creator branding Archer / Abdul Basit throughout.
-
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/8f90da1e-5273-40c3-aa0e-716c82e13894).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
+```bash
 git clone <this-repository-url>
+```
+
+### Navigate to the Project
+
+```bash
 cd <repository-name>
-npm i
+```
+
+### Install Dependencies
+
+```bash
+npm install
+```
+
+### Start the Development Server
+
+```bash
 npm run dev
 ```
-#   b e a m t r o - 2  
- 
+
+The application should then be available through the local development URL provided by your development environment.
+
+---
+
+## 🧪 Development
+
+During development, make sure to test:
+
+### Room Creation
+
+- Display-name validation
+- Unique room generation
+- Room-code generation
+- Shareable URL generation
+- Direct navigation into rooms
+
+### Room Joining
+
+- Joining with room codes
+- Joining with room URLs
+- Invalid room handling
+- Temporary display names
+
+### Communication
+
+- Text chat
+- Microphone
+- Camera
+- Screen sharing
+- Participant updates
+- Speaking indicators
+- Connection status
+
+### Error Handling
+
+Test scenarios including:
+
+- Camera unavailable
+- Microphone unavailable
+- Screen sharing unavailable
+- Unable to join
+- Connection loss
+- Reconnection
+
+---
+
+## 🌐 Creator
+
+### Built by Abdul Basit
+
+Beamtro was created by **Abdul Basit**, also known as **Archer**, as a practical and modern way to bring people into a shared space for conversations, support, and presentation-style sessions.
+
+**Portfolio:**  
+https://abdulbasit-archer.vercel.app/
+
+---
+
+## 🎯 Product Vision
+
+Beamtro aims to provide a communication experience that feels like an instrument rather than a complicated SaaS dashboard.
+
+The intended experience is:
+
+```text
+Open
+  ↓
+Create / Join
+  ↓
+Connect
+  ↓
+Talk
+```
+
+There should be:
+
+- No unnecessary onboarding
+- No account wall
+- No complicated dashboard
+- No overwhelming interface
+- No unnecessary settings
+
+Just a room and the people inside it.
+
+---
+
+## 💡 Use Cases
+
+Beamtro can be used for:
+
+- Quick team discussions
+- Remote assistance
+- Technical support
+- Online presentations
+- Small group meetings
+- Collaborative sessions
+- Screen demonstrations
+- Temporary conversations
+- Peer-to-peer communication
+
+---
+
+## 🔮 Future Improvements
+
+Potential future improvements include:
+
+- Improved room moderation
+- Better connection diagnostics
+- Enhanced mobile controls
+- More advanced participant management
+- Additional accessibility improvements
+- Improved performance monitoring
+- Advanced screen-sharing controls
+- Optional room security features
+
+---
+
+## 📜 License
+
+This project is owned and maintained by **Abdul Basit / Archer**.
+
+Add your preferred open-source or proprietary license here if you plan to distribute the project publicly.
+
+---
+
+## ⭐ Support
+
+If you find Beamtro useful or interesting, consider giving the repository a ⭐ on GitHub.
+
+---
+
+### Beamtro
+
+**One room. Voice, video, screen, and everything said.**
+
+Built with simplicity in mind.
+
+**Powered by Archer.**
