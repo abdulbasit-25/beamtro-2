@@ -1,0 +1,93 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Baloo 2", ui-sans-serif, system-ui, sans-serif;
+  --radius-sm: calc(var(--radius) - 4px); --radius-md: calc(var(--radius) - 2px); --radius-lg: var(--radius); --radius-xl: calc(var(--radius) + 4px); --radius-2xl: calc(var(--radius) + 8px);
+  --color-background: var(--background); --color-foreground: var(--foreground); --color-card: var(--card); --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover); --color-popover-foreground: var(--popover-foreground); --color-primary: var(--primary); --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary); --color-secondary-foreground: var(--secondary-foreground); --color-muted: var(--muted); --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent); --color-accent-foreground: var(--accent-foreground); --color-destructive: var(--destructive); --color-destructive-foreground: var(--destructive-foreground);
+  --color-danger: var(--danger); --color-danger-foreground: var(--danger-foreground); --color-success: var(--success); --color-info: var(--info); --color-warning: var(--warning);
+  --color-border: var(--border); --color-input: var(--input); --color-ring: var(--ring); --color-ring-offset-background: var(--background);
+  --color-room: var(--room); --color-room-foreground: var(--room-foreground); --color-room-surface: var(--room-surface); --color-room-elevated: var(--room-elevated); --color-room-line: var(--room-line); --color-room-muted: var(--room-muted);
+}
+
+:root {
+  --radius: .75rem;
+  --background: oklch(0.975 0.012 75); --foreground: oklch(0.28 0.028 310);
+  --card: oklch(0.995 0.005 70); --card-foreground: oklch(0.28 0.028 310);
+  --popover: oklch(0.995 0.005 70); --popover-foreground: oklch(0.28 0.028 310);
+  --primary: oklch(0.72 0.16 35); --primary-foreground: oklch(0.99 0.005 70);
+  --secondary: oklch(0.94 0.02 80); --secondary-foreground: oklch(0.28 0.028 310);
+  --muted: oklch(0.94 0.012 315); --muted-foreground: oklch(0.54 0.035 305);
+  --accent: oklch(0.73 0.11 300); --accent-foreground: oklch(0.28 0.028 310);
+  --destructive: oklch(0.61 0.2 25); --destructive-foreground: oklch(0.99 0 0);
+  --danger: oklch(0.61 0.2 25); --danger-foreground: oklch(0.99 0 0);
+  --success: oklch(0.71 0.14 160); --info: oklch(0.73 0.12 225); --warning: oklch(0.85 0.13 88);
+  --border: oklch(0.28 0.028 310 / 12%); --input: oklch(0.28 0.028 310 / 16%); --ring: oklch(0.73 0.11 300);
+  --room: oklch(0.2 0.025 300); --room-foreground: oklch(0.97 0.012 75); --room-surface: oklch(0.25 0.03 300); --room-elevated: oklch(0.3 0.035 300); --room-line: oklch(0.97 0.012 75 / 13%); --room-muted: oklch(0.74 0.025 300);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--color-background); color: var(--color-foreground); font-family: var(--font-sans); letter-spacing: 0; }
+  button, a, input { outline-offset: 3px; }
+  :focus-visible { outline: 2px solid var(--color-ring); }
+}
+
+@utility nav-link { border-radius: 999px; padding: .4rem .75rem; font-size: .875rem; font-weight: 500; color: color-mix(in oklab, var(--color-foreground) 72%, transparent); transition: background .18s ease, color .18s ease; &:hover { background: color-mix(in oklab, var(--color-foreground) 6%, transparent); color: var(--color-foreground); } }
+@utility footer-link { display: inline-flex; align-items: center; gap: .4rem; border-radius: 999px; padding: .55rem .9rem; font-size: .875rem; font-weight: 600; box-shadow: inset 0 0 0 1px var(--color-border); transition: box-shadow .18s ease; & svg { width: .9rem; height: .9rem; } &:hover { box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--color-foreground) 28%, transparent); } }
+@utility eyebrow { display: inline-flex; align-items: center; gap: .5rem; border-radius: 999px; background: color-mix(in oklab, var(--color-info) 14%, transparent); padding: .35rem .75rem; font-size: .75rem; font-weight: 700; color: var(--color-info); }
+@utility status-copy { font-size: .6875rem; font-weight: 600; color: var(--color-muted-foreground); }
+@utility status-pill { display: inline-flex; align-items: center; gap: .45rem; border-radius: 999px; background: var(--color-muted); padding: .35rem .65rem; font-size: .7rem; font-weight: 600; color: var(--color-muted-foreground); }
+@utility entry-panel { border-radius: 1.25rem; background: var(--color-card); padding: clamp(1.25rem, 4vw, 2rem); box-shadow: 0 18px 50px color-mix(in oklab, var(--color-foreground) 7%, transparent), inset 0 0 0 1px var(--color-border); }
+@utility signal-visual { border-radius: 1.5rem; background: var(--color-card); padding: 1.5rem; box-shadow: 0 20px 60px color-mix(in oklab, var(--color-foreground) 8%, transparent), inset 0 0 0 1px var(--color-border); animation: floaty 5s ease-in-out infinite; }
+@utility signal-person { display: grid; width: 2.5rem; height: 2.5rem; flex-shrink: 0; place-items: center; border-radius: .75rem; font-size: .8rem; font-weight: 700; }
+@utility signal-hub { display: grid; width: 3rem; height: 3rem; flex-shrink: 0; place-items: center; border-radius: 1rem; background: var(--color-foreground); }
+@utility flow-line { background-image: linear-gradient(90deg, transparent, currentColor, transparent); background-size: 200% 100%; animation: flow 3s linear infinite; }
+@utility room-preview { border-radius: 1.25rem; background: var(--color-room); padding: 1rem; color: var(--color-room-foreground); box-shadow: 0 20px 50px color-mix(in oklab, var(--color-room) 28%, transparent); }
+@utility preview-stage { margin-top: .75rem; display: grid; min-height: 12rem; place-items: center; align-content: center; gap: .5rem; border-radius: 1rem; background: linear-gradient(135deg, color-mix(in oklab, var(--color-info) 30%, transparent), color-mix(in oklab, var(--color-accent) 30%, transparent)); font-size: .75rem; }
+@utility preview-person { display: grid; min-height: 4.5rem; place-items: center; border-radius: .75rem; font-weight: 700; }
+@utility preview-control { display: grid; width: 2.25rem; height: 2.25rem; place-items: center; border-radius: 999px; background: color-mix(in oklab, var(--color-room-foreground) 10%, transparent); & svg { width: 1rem; height: 1rem; } }
+@utility feature-card { border-radius: 1rem; background: var(--color-card); padding: 1.5rem; box-shadow: inset 0 0 0 1px var(--color-border); }
+@utility feature-icon { display: grid; width: 2.75rem; height: 2.75rem; place-items: center; border-radius: .8rem; background: color-mix(in oklab, var(--color-primary) 18%, transparent); color: var(--color-primary); & svg { width: 1.25rem; } }
+@utility creator-band { margin-top: 2rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem; border-radius: 1rem; background: color-mix(in oklab, var(--color-accent) 11%, transparent); padding: 1.5rem; box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--color-accent) 24%, transparent); }
+@utility help-item { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 1rem; border-top: 1px solid var(--color-border); padding-top: 1.25rem; & > svg { width: 1.25rem; color: var(--color-primary); } }
+
+@utility room-shell { position: relative; min-height: calc(100vh - 57px); background: var(--color-room); color: var(--color-room-foreground); padding-bottom: 5.8rem; }
+@utility room-topbar { display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: center; gap: 1rem; border-bottom: 1px solid var(--color-room-line); padding: .75rem 1rem; }
+@utility room-grid { display: grid; min-height: calc(100vh - 160px); &.with-panel { grid-template-columns: minmax(0,1fr) minmax(18rem, 22rem); } }
+@utility media-stage { min-width: 0; padding: 1rem; }
+@utility video-grid { display: grid; height: 100%; min-height: 28rem; grid-template-columns: repeat(2, minmax(0,1fr)); gap: .75rem; }
+@utility participant-tile { position: relative; min-height: 12rem; overflow: hidden; border-radius: .8rem; background: var(--color-room-surface); box-shadow: inset 0 0 0 1px var(--color-room-line); transition: box-shadow .2s ease; &.is-speaking { box-shadow: inset 0 0 0 2px var(--color-success); } }
+@utility invite-tile { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .6rem; color: var(--color-room-muted); & strong { color: var(--color-room-foreground); } & span { font-size: .75rem; } }
+@utility side-panel { display: flex; min-height: 0; flex-direction: column; border-left: 1px solid var(--color-room-line); background: color-mix(in oklab, var(--color-room-surface) 82%, transparent); }
+@utility participant-row { display: flex; align-items: center; gap: .65rem; border-radius: .7rem; padding: .65rem; background: color-mix(in oklab, var(--color-room-foreground) 5%, transparent); & > svg { width: .9rem; height: .9rem; } }
+@utility message-row { border-left: 2px solid color-mix(in oklab, var(--color-accent) 60%, transparent); padding-left: .75rem; animation: rise .2s ease-out both; }
+@utility control-bar { position: fixed; z-index: 30; bottom: 1rem; left: 50%; display: flex; max-width: calc(100vw - 1rem); transform: translateX(-50%); align-items: center; gap: .45rem; border: 1px solid var(--color-room-line); border-radius: 999px; background: color-mix(in oklab, var(--color-room) 88%, transparent); padding: .45rem; box-shadow: 0 16px 40px color-mix(in oklab, var(--color-room) 60%, transparent); backdrop-filter: blur(18px); }
+
+@keyframes pulse-dot { 0%,100% { transform: scale(1); opacity: .9; } 50% { transform: scale(1.5); opacity: .35; } }
+@keyframes flow { to { background-position: 200% 0; } }
+@keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@keyframes rise { from { opacity: 0; transform: translateY(5px); } }
+.pulse-dot { animation: pulse-dot 2.4s ease-in-out infinite; }
+
+@media (max-width: 767px) {
+  .room-grid.with-panel { grid-template-columns: 1fr; }
+  .room-grid.with-panel .media-stage { display: none; }
+  .side-panel { min-height: calc(100vh - 165px); border-left: 0; }
+  .video-grid { min-height: calc(100vh - 220px); grid-template-columns: 1fr; }
+  .participant-tile { min-height: 14rem; }
+  .control-bar { gap: .25rem; }
+  .control-bar button { width: 2.55rem; height: 2.55rem; }
+  .control-bar button:last-child { width: 2.55rem; padding: 0; }
+  .control-bar button:last-child span { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
